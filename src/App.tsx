@@ -1,35 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {Activity, useState} from 'react'
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+	const [count, setCount] = useState<"one" | "two" | "three">("two");
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+	return (
+		<>
+			<p>👉 Click on the buttons to activate another "tab" and see what the browser title looks like</p>
+
+			<button className={count==="one" ? "active" : undefined} onClick={() => setCount("one")}>One</button>
+			<button className={count==="two" ? "active" : undefined} onClick={() => setCount("two")}>Two</button>
+			<button className={count==="three" ? "active" : undefined} onClick={() => setCount("three")}>Three</button>
+
+
+			<Activity mode={count === "one" ? "visible" : "hidden"}>
+				<One/>
+			</Activity>
+			<Activity mode={count === "two" ? "visible" : "hidden"}>
+				<Two/>
+			</Activity>
+			<Activity mode={count === "three" ? "visible" : "hidden"}>
+				<Three/>
+			</Activity>
+		</>
+	)
 }
 
-export default App
+function One() {
+	return <div>
+		<title>One</title>
+		One
+	</div>
+}
+
+function Two() {
+	return <div>
+		<title>Two</title>
+		Two
+	</div>
+}
+
+function Three() {
+	return <div>
+		<title>Three</title>
+		Three
+	</div>
+}
+
