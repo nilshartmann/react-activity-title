@@ -1,3 +1,15 @@
+# <Activity> and <title> in React 19.2
+
+Run the app:
+```bash
+pnpm install
+pnpm dev
+```
+
+- Click on the buttons to see the tabs switching (using `<Activity>`)
+- Note that the browser's tab title does not change
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
