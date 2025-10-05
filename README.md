@@ -1,4 +1,4 @@
-# <Activity> and <title> in React 19.2
+# Activity and title in React 19.2
 
 Run the app:
 ```bash
@@ -8,6 +8,8 @@ pnpm dev
 
 - Click on the buttons to see the tabs switching (using `<Activity>`)
 - Note that the browser's tab title does not change
+
+![Screenshot](./screenshot.png)
 
 
 # React + TypeScript + Vite
